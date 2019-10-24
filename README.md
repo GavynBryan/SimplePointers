@@ -12,7 +12,7 @@ int main()
 {
 	int number = 10;
 	int* pointer (&number);
-	std::cout << *pointer << " resides at " << pointer << "";
+	std::cout << *pointer << " resides at " << pointer << "\n";
 	number += 20;
 	std::cout << "But now, " << pointer << " is " << *pointer << "!" << std::endl;
 }
