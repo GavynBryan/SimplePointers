@@ -1,5 +1,5 @@
 # Quick explanation of how pointers work in C++
-Most online resources explaining how pointers work in C/C++ tend to be convoluted or don't demonstrate why they're useful for the programmer. This is actually really confusing considering it's one of the most important features of C++ that separate it from the other languages. 
+Most online resources explaining how pointers work in C/C++ tend to be convoluted or don't demonstrate why they're useful for the programmer. This is actually really confusing considering it's one of the most important features of C++ that separates it from the other languages. 
 
 This guide is made to organically demonstrate how pointers work in a way that you will understand their use and be ready to use them with confidence as soon as possible. No convoluted , unrelatable and unrealistic code examples.
 
