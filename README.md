@@ -164,4 +164,4 @@ The output of this program would look like:
 
 > Bob says, "AND HEY, I'M STILL BOB! :)"
 
-Hopefully after this quick, simple and lazy guide, you understand the differences between pointers, references, and their values. And you also understand their general application in everyday programming. Google will still index results showing outdated methods, or convoluted explanations that you'll never use involving a bunch of deeply nested X and Y variables. If you found this useful, feel free to share it. If you have any criticisms, feel free to make a pull request and I'll review it. 
+Hopefully after this quick, simple and lazy guide, you understand the differences between pointers, references, and their values. And you also understand their general application in everyday programming. I tried explaining them without using overly technical terms beyond the comprehension of a beginner. If you found this useful, feel free to share it. If you have any criticisms, feel free to make a pull request and I'll review it. 
