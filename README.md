@@ -11,7 +11,7 @@ This guide is made to organically demonstrate how pointers work in a way that yo
 int main()
 {
 	int number = 10;
-	int* pointer (&number);
+	int* pointer (&number); //the pointer is denoted by the asterisk
 	std::cout << *pointer << " resides at " << pointer << "\n";
 	number += 20;
 	std::cout << "But now, " << pointer << " is " << *pointer << "!" << std::endl;
@@ -23,7 +23,7 @@ The output would look something like:
 > But now, 0031FC54 is 30!
 
 Notice how we changed the value of \*pointer without touching it! The &ampersand contains the memory addressis called the "reference". The reference is what "feeds" the pointer the information it needs to retain the original information. The pointer *points* to the value of the memory address. Pointers are useful for referencing the original instance of something without making any copies in the memory. 
-If you were to strip the pointers from this example, "pointer" would have retained the old value of 10, while "number" increases to 30. I used an initializer for the pointer variable to demonstrate that references are usually passed through arguments. 
+If you were to strip the pointers from this example, "pointer" would have retained the old value of 10, while "number" increases to 30. I called the constructor for the pointer variable to demonstrate that references are usually passed through arguments. 
 
 But raw pointer usage tends to be a bit outdated. C++ has been updated with features that free us from (most of) the stress of managing memory addresses manually. Let's take a look at smart pointers.
 
