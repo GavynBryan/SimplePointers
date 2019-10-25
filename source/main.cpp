@@ -12,7 +12,7 @@ public:
 	person(string _name)
 		:name(_name)
 	{
-		std::cout << "A child is born! They say, \"Hey, I'm " << name << "! :)\" \n" << std::endl;
+		std::cout << "A child is born! They say, \"Hey, I'm " << name << "! :)\"" << std::endl;
 	}
 
 	string getName() {return name;}
@@ -35,7 +35,7 @@ int main()
 	people.push_back(std::move(Chad));
 	people.push_back(std::move(Stacy)); 
 
-	std::cout << "And they all come together and say, \n\"And we all live inside of this vector!\"\n" << std::endl;
+	std::cout << "And they all come together and say, \n\"And we all live inside of this vector!\"" << std::endl;
 
-	std::cout << pBob->getName() << " says, \"AND HEY, I'M STILL BOB! :)\"\n" << std::endl;
+	std::cout << pBob->getName() << " says, \"AND HEY, I'M STILL BOB! :)\"" << std::endl;
 }
