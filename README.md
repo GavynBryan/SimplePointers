@@ -62,7 +62,7 @@ public:
 
 int main()
 {
-	typedef std::unique_ptr<person> Ptr;
+	typedef std::unique_ptr<person> Ptr; //People often use typedef for smart pointers to avoid typing out the full thing
 	std::vector<Ptr> people;
 
 	Ptr Bob(new person("Bob"));
@@ -78,7 +78,7 @@ int main()
 
 }
   ```
-Keep in mind this is *not* a guide on proper class structure. ;) We've defined a class, person, to start off. I'm "person" to keep the example relatable and easy to understand. In our main function, we create 4 unique pointers, each holding a reference to a new person, and add them to the vector of people. We use std::move() to give the burden of the memory address to the vector.
+Keep in mind this is *not* a guide on proper class structure. ;) We've defined a class, person, to start off. I'm "person" to keep the example relatable and easy to understand. Now we have a new element, **std::unique_ptr**. This does exactly what the name implies, it creates a pointer that's managed by the scope and holds ownership of it, hence the "unique". In our main function, we create 4 unique pointers, each holding a reference to a new person, and add them to the vector of people. We use std::move() to give the burden of the memory address to the vector.
 
 Notice how all 4 of them were added to the vector of people, except Stacy. I did that intentionally; her pointer still resides in the main scope instead of the vector. To find out what this really means, add this block of code below the last std::cout
 
