@@ -1,7 +1,7 @@
 # Quick explanation of how pointers work in C++
 Most online resources explaining how pointers work in C/C++ tend to be convoluted or don't demonstrate why they're useful for the programmer. This is actually really confusing considering it's one of the most important features of C++ that separates it from the other languages. 
 
-This guide is made to organically demonstrate how pointers work in a way that you will understand their use and be ready to use them with confidence as soon as possible. No convoluted , unrelatable and unrealistic code examples.
+This guide is made to organically demonstrate how pointers work in a way that you will understand their use and be ready to use them with confidence as soon as possible. No convoluted, unrelatable and unrealistic code examples.
 
 ## At its bare minimum
 
@@ -45,7 +45,7 @@ This allows us to access the smart pointers under the std namespace. I'll also b
 #include <string>
 #include <vector>
 
-using std::string;
+using std::string; //to reduce redundancy
 
 class person {
 private:
@@ -73,12 +73,15 @@ int main()
 	people.push_back(std::move(Bob));
 	people.push_back(std::move(Jeff));
 	people.push_back(std::move(Chad));
+	//I didn't add Stacy to the vector!
 
 	std::cout << "And they all come together and say, \n\"And we all live inside of this vector!\"" << std::endl;
 
 }
   ```
-Keep in mind this is *not* a guide on proper class structure. ;) We've defined a class, person, to start off. I'm "person" to keep the example relatable and easy to understand. Now we have a new element, **std::unique_ptr**. This does exactly what the name implies, it creates a pointer that's managed by the scope and holds ownership of it, hence the "unique". In our main function, we create 4 unique pointers, each holding a reference to a new person, and add them to the vector of people. We use std::move() to give the burden of the memory address to the vector.
+Keep in mind this is *not* a guide on proper class structure. ;) We've defined a class, person, to start off. I'm using a class called "person" to keep the example relatable and easy to understand. 
+
+Now we have a new element in our code, **std::unique_ptr**. This does exactly what the name implies, it creates a pointer that's managed by the scope and holds ownership of it, hence the prefix "unique". In our main function, we create 4 unique pointers of the same class, each holding a reference to a new person. And then we move them to the vector of people. We use std::move() to give the burden of the memory address to the vector.
 
 Notice how all 4 of them were added to the vector of people, except Stacy. I did that intentionally; her pointer still resides in the main scope instead of the vector. To find out what this really means, add this block of code below the last std::cout
 
@@ -93,6 +96,12 @@ Notice how all 4 of them were added to the vector of people, except Stacy. I did
  > 005ED188
  
  Because the items are contained inside the pointers, we use get() to get the values inside the pointers. The first line is Bob's value, as you can see it is null. The second line is Stacy's value, as you can see, it is not null. This is because the Ptrs' memory have been moved inside the vector. In fact, because the entire Ptr was moved, you would get similar results if you removed the get() from these lines. 
+ 
+ 
+```
+	std::cout << Bob << std::endl;
+	std::cout << Stacy << std::endl;
+ ```
  
 > 00000000
 
